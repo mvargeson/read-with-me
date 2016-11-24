@@ -4,6 +4,7 @@
   "description": "",
   "main": "webpack.config.js",
   "scripts": {
+    "configure": "cp .env.example .env",
     "convertStories": "node ./database/PublicBooksLoader/convertStoryData.js",
     "lint": "eslint .",
     "start": "nodemon server.js",

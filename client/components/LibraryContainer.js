@@ -18,11 +18,13 @@ class LibraryContainer extends Component {
   componentWillMount() {
     fetch('/api/books').then(res => {
       res.json().then(books => {
+        // what is purpose of this?
         const convertTitles = (i) => {
           if (i === books.length) {
             this.receiveBooks(books);
           }
 
+          /* TODO: Why jQuery? remove */
           books[i].bookTitle = $('<textarea />').html(books[i].bookTitle).text();
           convertTitles(i + 1);
         };

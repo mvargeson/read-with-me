@@ -1,11 +1,13 @@
-import React, { PropTypes, Component } from 'react';
+import React, { PropTypes } from 'react';
 
-var Book = (props) => (
-      <div className="book">
-        <h2>{props.msg}</h2>
-      </div>
-    );
-  
+const Book = ({ message }) => (
+  <div className="book">
+    <h2>{message}</h2>
+  </div>
+);
+
+Book.propTypes = {
+  message: PropTypes.string,
+};
+
 export default Book;
-
-/*this is the component where highlighting will take place.*/

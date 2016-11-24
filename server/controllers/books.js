@@ -19,62 +19,6 @@ module.exports = {
     });
   },
 
-  // currently not un use
-  addBook: function (req, res) {
-    Book.remove({}).then(function() {
-      fs.readFile(__dirname + '/../database/PublicBooksLoader/sample-book-data/14837.json')
-        .then(function(content) { return JSON.parse(content); })
-        .then(function(content) {
-          var newBook = new Book({
-            bookTitle: 'The Very Hungry Caterpillar',
-            author: 'Eric Carle',
-            bookData: content
-          });
-
-          newBook.save(function(err) {
-            if (err) {
-              throw err;
-            }
-            console.log('New Book entry created !');
-          });
-
-          res.json({ message: 'inside addBooks !!' });
-        });
-    });
-  },
-
-  updateBook: function (req, res) {
-    Book.findOne({bookTitle: req.body.bookTitle}, function(err, book) {
-      console.log('what the book is', book)
-        book.bookData = req.body.bookData;
-        book.save(function(err) {
-            if(!err) {
-                console.log("updated book object");
-            }
-            else {
-                console.log("Error: could not book ");
-            }
-        });
-        }
-    );
-  },
-
-  saveCreatedBook: function (req, res) {
-    var newCreatedBook = new Book({
-      bookTitle: req.body.bookTitle,
-      bookTitleImage: req.body.bookTitleImage,
-      bookData: req.body.bookData,
-    }).save(function(err, newBook) {
-      if (err) {
-        console.log('cannot save newBook');
-      } else {
-        console.log('successful save of newly created book')
-        res.send(newBook);
-      }
-    });
-  },
-
-
   // add all sample books data, called from get '/api/addAllBooks'
   addAllSampleBooks: function (req, res) {
     console.log('add sample books');

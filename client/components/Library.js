@@ -6,7 +6,6 @@ import { Link } from 'react-router';
 const Library = ({ books, term, filter }) => (
   <div className="container">
     <AuthBar />
-    <button className="btn waves-effect white"><Link to="create">Create Book</Link></button>
     <div className="library">
       <h1>Read With Me</h1>
       <input placeholder="filter by title..." value={term} onChange={e => filter(e.target.value)} />

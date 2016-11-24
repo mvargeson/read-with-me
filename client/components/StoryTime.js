@@ -2,7 +2,6 @@
 import React, { Component, PropTypes } from 'react';
 import { browserHistory } from 'react-router';
 import Title from './storycomponents/Title.js';
-import BookBackground from './storycomponents/BookBackground.js';
 import PrevButton from './storycomponents/PrevButton.js';
 import NextButton from './storycomponents/NextButton.js';
 import LeftPageText from './storycomponents/LeftPageText.js';
@@ -13,7 +12,7 @@ import socket from '../../websocket.js';
 import ConversationContainer from './ConversationContainer.jsx';
 import $ from 'jquery';
 
-// TODO: Clean Dead Code / Lint Fix
+// TODO: Clean Dead Code / Lint Fix / component too large
 class StoryTime extends Component {
   constructor(props) {
     super(props);
