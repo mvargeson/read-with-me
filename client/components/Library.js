@@ -1,7 +1,6 @@
 import React, { PropTypes } from 'react';
 import AuthBar from './AuthBar';
 import LibraryBook from './LibraryBook';
-import { Link } from 'react-router';
 
 const Library = ({ books, term, filter }) => (
   <div className="container">

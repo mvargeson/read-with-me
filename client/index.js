@@ -6,7 +6,6 @@ import App from './components/App';
 import LibraryContainer from './components/LibraryContainer';
 import StoryTime from './components/StoryTime';
 import NoMatch from './components/NoMatch';
-import CreateBook from './components/CreateBook';
 
 // Check if browser has WebRTC, WebRTC is required for webcam/Twilio to work
 // TODO: check before entering the story time route
@@ -20,7 +19,6 @@ const render = () => {
       <Route path="/" component={App}>
         <IndexRedirect to="/library" />
         <Route path="library" component={LibraryContainer} />
-        <Route path="create" component={CreateBook} />
         <Route path="story-time/:userId/:bookId" component={StoryTime} />
         <Route path="*" component={NoMatch} />
       </Route>
